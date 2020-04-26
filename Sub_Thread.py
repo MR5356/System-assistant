@@ -39,7 +39,7 @@ class Source_Thread(QThread):
                 if soft_cfg.debug:
                     result = soft_cfg.source_api
                 else:
-                    result = requests.get(soft_cfg.source_api_url, timeout=3).text
+                    result = requests.get(soft_cfg.source_api_url, timeout=15).text
                     cache_data("source", json.loads(result))
             except Exception as e:
                 print(f"source result info: {e}, try to use cache")
