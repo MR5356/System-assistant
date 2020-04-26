@@ -92,7 +92,7 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.article_url = []  # 文章教程链接初始化
 
         # 线程启动
-        self.time_thread()
+        # self.time_thread()
         self.source_thread()
         self.article_thread()
 

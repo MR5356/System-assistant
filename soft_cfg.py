@@ -4,12 +4,12 @@ import json
 web_site = "https://www.toodo.fun"  # 网站主页
 feed_back = "https://www.toodo.fun"  # 反馈网址
 help_us = "https://toodo.fun/funs/thanks/"  # 捐赠网址
-source_api_url = ""  # 源码仓库网址
-article_api_url = ""  # 文章教程网址
+source_api_url = "http://softapi.toodo.fun/get_source"  # 源码仓库网址
+article_api_url = "http://softapi.toodo.fun/get_article"  # 文章教程网址
 
 # 线程配置
 time_thread = .5
-source_thread = 60
+source_thread = 600  # 不用经常刷新
 article_thread = 60
 
 # 测试数据

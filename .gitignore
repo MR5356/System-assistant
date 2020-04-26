@@ -2,12 +2,16 @@
 __pycache__/
 *.py[cod]
 *$py.class
+test.py
+*.json
+*.txt
 
 # C extensions
 *.so
 
 # Distribution / packaging
 .Python
+.idea/
 build/
 develop-eggs/
 dist/
@@ -123,3 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+.idea/workspace.xml
+.idea/misc.xml

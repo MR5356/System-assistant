@@ -281,7 +281,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLabel" name="label_time">
+           <widget class="QLabel" name="label_sys_info">
             <property name="font">
              <font>
               <family>微软雅黑</family>

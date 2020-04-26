@@ -44,4 +44,5 @@ def get_info():
 
 
 if __name__ == '__main__':
-    get_info()
+    result = get_info()
+    print(result)
