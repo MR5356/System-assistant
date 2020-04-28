@@ -63,7 +63,7 @@
           </size>
          </property>
          <property name="styleSheet">
-          <string notr="true">QWidget#widget_menu{background:#6B53E9}</string>
+          <string notr="true">QWidget#widget_menu{background:qlineargradient(spread:pad,x1:0,y1:0,x2:1,y2:0,stop:0 #4e54c8,stop:1 #8f94fb);}</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <property name="spacing">
@@ -481,37 +481,47 @@
                <property name="currentIndex">
                 <number>5</number>
                </property>
-               <widget class="QWidget" name="page">
-                <widget class="QLabel" name="label">
-                 <property name="geometry">
-                  <rect>
-                   <x>60</x>
-                   <y>70</y>
-                   <width>72</width>
-                   <height>15</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>软件库</string>
-                 </property>
-                </widget>
+               <widget class="QWidget" name="sta_software">
+                <layout class="QHBoxLayout" name="horizontalLayout_12">
+                 <item>
+                  <widget class="QLabel" name="label">
+                   <property name="text">
+                    <string>加班加点紧急制作中</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
-               <widget class="QWidget" name="page_2">
-                <widget class="QLabel" name="label_3">
-                 <property name="geometry">
-                  <rect>
-                   <x>90</x>
-                   <y>90</y>
-                   <width>72</width>
-                   <height>15</height>
-                  </rect>
-                 </property>
-                 <property name="text">
-                  <string>接口文档</string>
-                 </property>
-                </widget>
+               <widget class="QWidget" name="sta_licenses">
+                <layout class="QHBoxLayout" name="horizontalLayout_11">
+                 <item>
+                  <widget class="QTextEdit" name="textEdit_licenses">
+                   <property name="font">
+                    <font>
+                     <family>微软雅黑</family>
+                     <pointsize>9</pointsize>
+                    </font>
+                   </property>
+                   <property name="styleSheet">
+                    <string notr="true">QTextEdit{background:Transparent;border:0px solid grey;}</string>
+                   </property>
+                   <property name="verticalScrollBarPolicy">
+                    <enum>Qt::ScrollBarAlwaysOff</enum>
+                   </property>
+                   <property name="horizontalScrollBarPolicy">
+                    <enum>Qt::ScrollBarAlwaysOff</enum>
+                   </property>
+                   <property name="textInteractionFlags">
+                    <set>Qt::NoTextInteraction</set>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
-               <widget class="QWidget" name="page_3">
+               <widget class="QWidget" name="sta_article">
                 <layout class="QHBoxLayout" name="horizontalLayout_10">
                  <property name="spacing">
                   <number>0</number>
@@ -549,7 +559,7 @@
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="page_4">
+               <widget class="QWidget" name="sta_source">
                 <layout class="QVBoxLayout" name="verticalLayout_8">
                  <item>
                   <widget class="QWidget" name="widget_10" native="true">
@@ -582,13 +592,13 @@
                         <number>0</number>
                        </property>
                        <property name="leftMargin">
-                        <number>0</number>
+                        <number>10</number>
                        </property>
                        <property name="topMargin">
                         <number>0</number>
                        </property>
                        <property name="rightMargin">
-                        <number>0</number>
+                        <number>10</number>
                        </property>
                        <property name="bottomMargin">
                         <number>0</number>
@@ -672,7 +682,7 @@
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="page_5">
+               <widget class="QWidget" name="sta_about_us">
                 <layout class="QVBoxLayout" name="verticalLayout_4">
                  <property name="spacing">
                   <number>0</number>
@@ -954,20 +964,90 @@
                  </item>
                 </layout>
                </widget>
-               <widget class="QWidget" name="start">
-                <widget class="QLabel" name="label_2">
-                 <property name="geometry">
-                  <rect>
-                   <x>360</x>
-                   <y>230</y>
-                   <width>72</width>
-                   <height>15</height>
-                  </rect>
+               <widget class="QWidget" name="sta_start">
+                <layout class="QVBoxLayout" name="verticalLayout_11">
+                 <property name="spacing">
+                  <number>0</number>
                  </property>
-                 <property name="text">
-                  <string>欢迎界面</string>
+                 <property name="leftMargin">
+                  <number>0</number>
                  </property>
-                </widget>
+                 <property name="topMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>0</number>
+                 </property>
+                 <property name="bottomMargin">
+                  <number>0</number>
+                 </property>
+                 <item>
+                  <widget class="QWidget" name="widget_12" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_12">
+                    <item>
+                     <spacer name="verticalSpacer_4">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>309</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                    <item>
+                     <widget class="QLabel" name="label_welcome">
+                      <property name="font">
+                       <font>
+                        <family>华文行楷</family>
+                        <pointsize>16</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>初逢不知人如玉，再逢已是意中人</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QWidget" name="widget_13" native="true">
+                   <layout class="QVBoxLayout" name="verticalLayout_13">
+                    <item>
+                     <widget class="QLabel" name="label_time">
+                      <property name="text">
+                       <string>TextLabel</string>
+                      </property>
+                      <property name="alignment">
+                       <set>Qt::AlignCenter</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <spacer name="verticalSpacer_5">
+                      <property name="orientation">
+                       <enum>Qt::Vertical</enum>
+                      </property>
+                      <property name="sizeHint" stdset="0">
+                       <size>
+                        <width>20</width>
+                        <height>308</height>
+                       </size>
+                      </property>
+                     </spacer>
+                    </item>
+                   </layout>
+                  </widget>
+                 </item>
+                </layout>
                </widget>
               </widget>
              </item>

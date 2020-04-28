@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QCursor
-from PyQt5.QtWidgets import qApp, QMessageBox, QWidget, QHBoxLayout, QLabel, QVBoxLayout, QListWidgetItem, QApplication
+from PyQt5.QtWidgets import qApp, QMessageBox, QWidget, QHBoxLayout, QVBoxLayout, QListWidgetItem
 import qtawesome
 from main_window import Ui_MainWindow
 from Sub_Thread import Time_Thread
@@ -39,10 +39,25 @@ def get_item_source(msms):
     layout_right_down = QHBoxLayout()  # 右下的横向布局
 
     pushButton_info = QtWidgets.QPushButton()
-    pushButton_info.setStyleSheet("QPushButton{background:Transparent;border:0px solid grey;text-align:left;color:Gray}")
-    pushButton_info.setIcon(qtawesome.icon('fa.info-circle', color="Gray"))
-    pushButton_info.setText(info)
+    pushButton_info.setStyleSheet(
+        "QPushButton{background:Transparent;border:0px solid grey;text-align:left;color:Gray}")
+    pushButton_info.setIcon(qtawesome.icon('fa.info-circle', color="Green"))
+    pushButton_info.setText("")
+    # pushButton_info.setWordWrap(True)
     layout_right_down.addWidget(pushButton_info)
+
+    label_info = QtWidgets.QLabel()
+    label_info.setStyleSheet("QLabel{background:Transparent;border:0px solid grey;}")
+    font = QtGui.QFont()
+    font.setFamily("微软雅黑")
+    # font.setPointSize(7)
+    label_info.setFont(font)
+    label_info.setText(info)
+    # label_info.setWordWrap(True)
+    layout_right_down.addWidget(label_info)
+
+    spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Minimum)
+    layout_right_down.addItem(spacerItem)
 
     layout_right_up = QHBoxLayout()  # 右上的横向布局
     label_tag = QtWidgets.QLabel()
@@ -90,18 +105,22 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.m_flag = False
         self.source_url = []  # 源码仓库链接初始化
         self.article_url = []  # 文章教程链接初始化
+        self.label_10.hide()
+        self.label_sys_info.hide()
 
         # 线程启动
-        # self.time_thread()
+        self.time_thread()
         self.source_thread()
         self.article_thread()
 
     def signal_on_btn(self):
+        # 基础按钮事件绑定
         self.pushButton_close.clicked.connect(lambda: window_close(0))
         self.pushButton_min.clicked.connect(lambda: self.showMinimized())
         self.pushButton_feedback.clicked.connect(lambda: open_browser(soft_cfg.feed_back))
         self.pushButton_web_site.clicked.connect(lambda: open_browser(soft_cfg.web_site))
         self.pushButton_help_us.clicked.connect(lambda: open_browser(soft_cfg.help_us))
+        self.pushButton_web_rights.clicked.connect(self.licenses)
 
         # List Widget点击事件
         self.listWidget_source.itemClicked.connect(self.source_item_clicked)
@@ -109,7 +128,8 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
 
         # 界面转换
         self.pushButton_menu_soft.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
-        self.pushButton_menu_api.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
+        # self.pushButton_menu_api.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
+        self.pushButton_menu_api.clicked.connect(self.open_api_site)
         self.pushButton_menu_article.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
         self.pushButton_menu_source.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
         self.pushButton_menu_about_us.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(4))
@@ -125,7 +145,22 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.pushButton_menu_source.setIcon(qtawesome.icon('fa.code', color='white'))
         self.pushButton_menu_soft.setIcon(qtawesome.icon('fa.th-large', color='white'))
 
-    # 界面拖动
+    # 自定义功能区
+    def open_api_site(self):  # 接口文档 --跳转到API网页
+        res = QMessageBox.question(self, '提示', '即将在浏览器中打开接口文档，需登录后才可使用本站API，是否继续？', QMessageBox.Yes | QMessageBox.No,
+                                   QMessageBox.No)
+        if res == QMessageBox.Yes:
+            open_browser(soft_cfg.api_site)
+        else:
+            pass
+
+    def licenses(self):
+        self.stackedWidget.setCurrentIndex(1)
+        self.textEdit_licenses.append(soft_cfg.licenses)
+        scrollbar = self.textEdit_licenses.verticalScrollBar()
+        scrollbar.setSliderPosition(0)
+
+        # 界面拖动
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
             self.m_flag = True
@@ -204,5 +239,4 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
 
     def article_item_clicked(self, item):
         open_browser(self.article_url[self.listWidget_article.currentIndex().row()])
-
 
