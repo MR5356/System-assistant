@@ -1,3 +1,7 @@
+import hashlib
+import os
+import subprocess
+
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QCursor
@@ -7,7 +11,11 @@ from main_window import Ui_MainWindow
 from Sub_Thread import Time_Thread
 from Sub_Thread import Source_Thread
 from Sub_Thread import Article_Thread
+from Sub_Thread import Update_Thread
 import soft_cfg
+
+md5obj = hashlib.md5()
+file = os.path.realpath(__file__)
 
 
 def window_close(code):
@@ -112,6 +120,7 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.time_thread()
         self.source_thread()
         self.article_thread()
+        self.update_thread()
 
     def signal_on_btn(self):
         # 基础按钮事件绑定
@@ -121,6 +130,7 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.pushButton_web_site.clicked.connect(lambda: open_browser(soft_cfg.web_site))
         self.pushButton_help_us.clicked.connect(lambda: open_browser(soft_cfg.help_us))
         self.pushButton_web_rights.clicked.connect(self.licenses)
+        self.pushButton_update.clicked.connect(self.update_thread)
 
         # List Widget点击事件
         self.listWidget_source.itemClicked.connect(self.source_item_clicked)
@@ -138,6 +148,7 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.pushButton_feedback.setIcon(qtawesome.icon('fa.envelope-o', color="blank"))
         self.pushButton_min.setIcon(qtawesome.icon('fa.window-minimize', color='blank'))
         self.pushButton_close.setIcon(qtawesome.icon('fa.close', color='blank'))
+        self.pushButton_update.setIcon(qtawesome.icon('fa.arrow-circle-up', color='blank'))
         # 菜单栏图标
         self.pushButton_menu_about_us.setIcon(qtawesome.icon('fa.yelp', color='white'))
         self.pushButton_menu_api.setIcon(qtawesome.icon('fa.link', color='white'))
@@ -161,6 +172,7 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         scrollbar.setSliderPosition(0)
 
         # 界面拖动
+
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
             self.m_flag = True
@@ -240,3 +252,28 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
     def article_item_clicked(self, item):
         open_browser(self.article_url[self.listWidget_article.currentIndex().row()])
 
+    def update_thread(self, auto=True):
+        try:
+            self.update_Thread = Update_Thread(auto)
+            self.update_Thread.display_signal.connect(self.Update_UI)
+            self.update_Thread.start()
+        except:
+            QMessageBox.information(self, '小助手提示', '程序运行异常，请确定网络连接是否正常，然后尝试重启客户端，如问题还未解决，请点击反馈按钮留言')
+
+    def Update_UI(self, msm):
+        if msm['Version'] <= soft_cfg.version:
+            if not msm["auto"] != False:
+                QMessageBox.information(self, '小助手提示', '已经是最新版本')
+            else:
+                pass
+        else:
+            reply = QtWidgets.QMessageBox.question(self,
+                                                   '发现新版本，是否立即更新',
+                                                   f'发现新版本：V{msm["Version"]}，更新内容如下：\n\n{msm["Update_des"]}\n\n是否立即更新?',
+                                                   QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No,
+                                                   QtWidgets.QMessageBox.No)
+            if reply == QtWidgets.QMessageBox.Yes:
+                subprocess.Popen(f"update_main.exe {msm['Update_url']} {soft_cfg.name}")
+                qApp.exit(0)
+            else:
+                pass

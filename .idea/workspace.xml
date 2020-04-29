@@ -35,8 +35,8 @@
       <recent name="F:\Python\System assistant" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.main">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.get_hash">
+    <configuration name="但行趣事管家" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="System assistant" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -48,7 +48,28 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="F:\Python\System assistant\但行趣事管家.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="get_hash" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="System assistant" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_hash.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -122,9 +143,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.get_hash" />
+        <item itemvalue="Python.但行趣事管家" />
         <item itemvalue="Python.update_main" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.source_api" />
       </list>
     </recent_temporary>
@@ -147,53 +169,57 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Notifications/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587868339943" />
-    <state width="1515" height="221" key="GridCell.Tab.0.bottom" timestamp="1588088093234">
+    <state width="1515" height="221" key="GridCell.Tab.0.bottom" timestamp="1588147985010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
-    <state width="1515" height="221" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588088093234" />
+    <state width="1515" height="221" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588147985010" />
     <state width="1419" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1587889042178" />
-    <state width="1515" height="221" key="GridCell.Tab.0.center" timestamp="1588088093234">
+    <state width="1515" height="221" key="GridCell.Tab.0.center" timestamp="1588147985010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
-    <state width="1515" height="221" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588088093234" />
+    <state width="1515" height="221" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588147985010" />
     <state width="1419" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1587889042178" />
-    <state width="1515" height="221" key="GridCell.Tab.0.left" timestamp="1588088093234">
+    <state width="1515" height="221" key="GridCell.Tab.0.left" timestamp="1588147985010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1587959047450" />
-    <state width="1515" height="221" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588088093234" />
+    <state width="1515" height="221" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588147985010" />
     <state width="1419" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1587889042178" />
-    <state width="1515" height="221" key="GridCell.Tab.0.right" timestamp="1588088093234">
+    <state width="1515" height="221" key="GridCell.Tab.0.right" timestamp="1588147985010">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
-    <state width="1515" height="221" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588088093234" />
+    <state width="1515" height="221" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588147985010" />
     <state width="1419" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1587889042178" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1587992930232">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1588144282060">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587992930232" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1587992930232">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588144282060" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1588144282059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587992930232" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1587992930232">
+    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588144282059" />
+    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1588144282059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587992930232" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1587992930232">
+    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588144282059" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1588144282059">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587992930232" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588144282059" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1587966392725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="54" key="SettingsEditor/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587966392725" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1587963633052">
+    <state x="510" y="54" key="refactoring.ChangeSignatureDialog" timestamp="1588137576170">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587963633052" />
+    <state x="510" y="54" key="refactoring.ChangeSignatureDialog/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588137576170" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1588139619052">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588139619052" />
   </component>
 </project>

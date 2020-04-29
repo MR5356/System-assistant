@@ -1,5 +1,8 @@
 import json
 
+version = 1.1
+name = "但行趣事管家.exe"
+
 # 定义网址
 web_site = "https://www.toodo.fun"  # 网站主页
 api_site = "https://www.toodo.fun/api" # API 主页
@@ -7,6 +10,7 @@ feed_back = "https://www.toodo.fun"  # 反馈网址
 help_us = "https://toodo.fun/funs/thanks/"  # 捐赠网址
 source_api_url = "http://softapi.toodo.fun/get_source"  # 源码仓库网址
 article_api_url = "http://softapi.toodo.fun/get_article"  # 文章教程网址
+update_url = "https://www.toodo.fun/api/software/version.php"  # 软件更新网址
 
 # 线程配置
 time_thread = .5

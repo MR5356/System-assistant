@@ -77,3 +77,23 @@ class Article_Thread(QThread):
             result = json.loads(result)
             self.thread_signal.emit(result)
             time.sleep(soft_cfg.article_thread)
+
+
+class Update_Thread(QThread):
+    display_signal = pyqtSignal(dict)
+
+    def __init__(self, auto):
+        super().__init__()
+        self.auto = auto
+
+    def run(self):
+        try:
+            # raise FileExistsError
+            result = json.loads(requests.get(soft_cfg.update_url, timeout=3).text)
+        except:
+            result = {"Version": soft_cfg.version}
+        if self.auto:
+            result["auto"] = True
+        else:
+            result["auto"] = False
+        self.display_signal.emit(result)

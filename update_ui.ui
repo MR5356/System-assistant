@@ -74,7 +74,7 @@
           </font>
          </property>
          <property name="text">
-          <string>软件升级中，请稍后...</string>
+          <string>升级程序</string>
          </property>
         </widget>
        </item>
@@ -129,7 +129,7 @@
     <item>
      <widget class="QTextEdit" name="textEdit">
       <property name="styleSheet">
-       <string notr="true">QTextEdit{background:Transparent}</string>
+       <string notr="true">QTextEdit{background:Transparent;border:0px solid grey;}</string>
       </property>
       <property name="verticalScrollBarPolicy">
        <enum>Qt::ScrollBarAlwaysOff</enum>

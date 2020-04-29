@@ -58,7 +58,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addWidget(self.pushButton_close)
         self.verticalLayout.addWidget(self.widget)
         self.textEdit = QtWidgets.QTextEdit(self.centralwidget)
-        self.textEdit.setStyleSheet("QTextEdit{background:Transparent}")
+        self.textEdit.setStyleSheet("QTextEdit{background:Transparent;border:0px solid grey;}")
         self.textEdit.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit.setHorizontalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOff)
         self.textEdit.setReadOnly(True)
@@ -111,6 +111,6 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "软件升级中，请稍后..."))
+        self.label.setText(_translate("MainWindow", "升级程序"))
         self.label_2.setText(_translate("MainWindow", "更新进度："))
         self.progressBar.setFormat(_translate("MainWindow", "%p%"))
