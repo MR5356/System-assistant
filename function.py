@@ -290,7 +290,14 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         thread = msm[1]
         fileName = msm[2]
         self.progressBar_downloader_main.show()
+        self.textEdit_download_top.clear()
+        self.textEdit_download_sub.clear()
         self.textEdit_download_sub.show()
+        try:
+            self.download_Thread.stop()
+            self.download_Thread.thread_signal.disconnect()
+        except:
+            pass
         self.download_Thread = Download_Thread(url, thread, fileName)
         self.download_Thread.thread_signal.connect(self.downloadThread)
         self.download_Thread.start()

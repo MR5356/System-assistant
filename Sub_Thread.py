@@ -112,12 +112,16 @@ class DownloaderNornal(QThread):
         self.dend = end
         self.threadId = threadId
         self.chunkSize = chunkSize
+        self.runFlag = 0
 
     def run(self):
         if self.choose == 1:
             self.run_normal()
         else:
             self.run_special()
+
+    def stop(self):
+        self.runFlag = 1
 
     def run_normal(self):
         start = self.dstart
@@ -126,7 +130,7 @@ class DownloaderNornal(QThread):
         chunkSize = self.chunkSize
         for _ in range(30):
             try:
-                headers = {'Range': f'bytes={start}-{end}'}
+                headers = {'Range': f'bytes={start}-{end}', "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36"}
                 req = requests.get(self.url, headers=headers, timeout=5, stream=True)
                 subSize = 0
                 with open(self.saveFile, 'rb+') as fo:
@@ -137,6 +141,8 @@ class DownloaderNornal(QThread):
                             start += chunkSize
                             subSize += chunkSize
                             self.thread_signal.emit(threadId)
+                            if self.runFlag == 1:
+                                return
 
                 return
             except Exception as e:
@@ -149,9 +155,9 @@ class DownloaderNornal(QThread):
         chunkSize = self.chunkSize
         for _ in range(15):
             try:
-                req = requests.get(self.url, timeout=30, stream=True)
+                req = requests.get(self.url, timeout=30, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36"}, stream=True)
                 subSize = 0
-                with open(self.saveFile, 'rb+') as fo:
+                with open(self.saveFile, 'wb') as fo:
                     fo.seek(start)
                     for chunk in req.iter_content(chunk_size=chunkSize):
                         if chunk:
@@ -159,7 +165,9 @@ class DownloaderNornal(QThread):
                             start += chunkSize
                             subSize += chunkSize
                             self.thread_signal.emit(threadId)
-
+                            if self.runFlag == 1:
+                                return
+                self.thread_signal.emit(99999)
                 return
             except Exception as e:
                 print(f"Download_Thread: {e}")
@@ -174,6 +182,7 @@ class Download_Thread(QThread):
         self.url = url
         self.threadNum = threadNum
         self.saveFile = saveFile
+        self.runFlag = 0
         self.feedback = {
             'info': {
                 'size': 0,
@@ -182,7 +191,8 @@ class Download_Thread(QThread):
                 'downloader': 1,
                 'started': 0,
                 'averageSpeed': 0,
-                'thread': self.threadNum
+                'thread': self.threadNum,
+                'specialCode': 0
             },
             'main': {
                 'data': 0,
@@ -195,20 +205,28 @@ class Download_Thread(QThread):
         }
         self.threads = {}
 
-        # 302迭代寻址
-        req = requests.head(self.url)
-        while req.status_code == 302:
-            self.url = req.headers['Location']
-            self.feedback['info']['url'] = self.url
-
     def run(self):
         if os.path.exists(self.saveFile):
             self.thread_signal.emit({'fileExists': 1, 'filePath': self.saveFile})
         else:
+            # 302迭代寻址
+            req = requests.head(self.url, headers={
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36"})
+            while req.status_code == 302:
+                self.url = req.headers['Location']
+                self.feedback['info']['url'] = self.url
+                req = requests.head(self.url, headers={
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36"})
+            print(self.url)
             try:
                 self.runDownloaderNormal()
             except:
                 self.downloaderSpecial()
+
+    def stop(self):
+        for i in self.threads:
+            i.stop()
+        self.runFlag = 1
 
     def downloaderNormal(self, start, end, threadId, chunkSize=10240):
         self.threads[f'thread{threadId}'] = DownloaderNornal(1, self.url, self.saveFile, start, end, threadId)
@@ -219,13 +237,15 @@ class Download_Thread(QThread):
         chunkSize = 10240
         if threadId == 99:
             self.feedback['main']['data'] += chunkSize
+        elif threadId == 99999:
+            self.feedback['info']['specialCode'] = 1
         else:
             self.feedback['main']['data'] += chunkSize
             self.feedback['sub']['data'][threadId][0] += chunkSize
             self.feedback['sub']['stat'][threadId] = 1
 
     def runDownloaderNormal(self):
-        req = requests.head(self.url)
+        req = requests.head(self.url, headers={"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.92 Safari/537.36"})
         self.feedback['info']['size'] = int(req.headers['Content-Length'])
         self.thread_signal.emit(self.feedback)
         # 初始化下载文件, 创建一个与文件大小相同的空间
@@ -253,14 +273,21 @@ class Download_Thread(QThread):
         self.sendSignal()
 
     def sendSignal(self):
-        while True:
+        while self.runFlag == 0:
             savedData = self.feedback['main']['data']
             time.sleep(.5)
             speed = (self.feedback['main']['data'] - savedData) * 2
             self.feedback['main']['speed'] = speed
             self.thread_signal.emit(self.feedback)
-            if self.feedback['main']['data'] >= self.feedback['info']['size']:
+            if self.feedback['main']['data'] >= self.feedback['info']['size'] and self.feedback['info']['downloader'] == 1:
                 self.feedback['main']['data'] = self.feedback['info']['size']
+                endTime = time.time()
+                speed = self.feedback['info']['size'] / (endTime - self.startTime)
+                self.feedback['info']['averageSpeed'] = speed
+                self.thread_signal.emit(self.feedback)
+                break
+            elif self.feedback['info']['downloader'] == 0 and self.feedback['info']['specialCode'] == 1:
+                self.feedback['info']['size'] = self.feedback['main']['data']
                 endTime = time.time()
                 speed = self.feedback['info']['size'] / (endTime - self.startTime)
                 self.feedback['info']['averageSpeed'] = speed
