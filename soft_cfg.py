@@ -1,6 +1,6 @@
 import json
 
-version = 1.1
+version = 1.2
 name = "但行趣事管家.exe"
 
 # 定义网址
