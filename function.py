@@ -1,7 +1,6 @@
 import hashlib
 import os
 import subprocess
-
 from PyQt5 import QtWidgets, QtCore, QtGui
 from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QCursor
@@ -12,7 +11,6 @@ from Sub_Thread import Time_Thread
 from Sub_Thread import Source_Thread
 from Sub_Thread import Article_Thread
 from Sub_Thread import Update_Thread
-from Sub_Thread import Download_Thread
 from download_function import Download_UI
 import soft_cfg
 
@@ -113,23 +111,6 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.article_url = []  # 文章教程链接初始化
         self.label_10.hide()
         self.label_sys_info.hide()
-        self.pros = [self.progressBar_downloader_sub0, self.progressBar_downloader_sub1,
-                     self.progressBar_downloader_sub2, self.progressBar_downloader_sub3,
-                     self.progressBar_downloader_sub4, self.progressBar_downloader_sub5,
-                     self.progressBar_downloader_sub6, self.progressBar_downloader_sub7,
-                     self.progressBar_downloader_sub8, self.progressBar_downloader_sub9,
-                     self.progressBar_downloader_sub10, self.progressBar_downloader_sub11,
-                     self.progressBar_downloader_sub12, self.progressBar_downloader_sub13,
-                     self.progressBar_downloader_sub14, self.progressBar_downloader_sub15]
-        for i in self.pros:
-            i.hide()
-        self.progressBar_downloader_main.hide()
-        self.textEdit_download_sub.hide()
-        msm = f"<center><h2>欢迎试用此下载器</h2>" \
-              f"<h4>本软件为开源项目，可点击左侧'源码仓库'菜单，点击'System-assistant'查看程序源码</h4>" \
-              f"<h4>当前版本仅支持http/https下载协议的下载链接，其他协议链接正在添加中</h4>" \
-              f"<h3>程序功能正在逐步完善中，敬请期待...</h3></center>"
-        self.textEdit_download_top.append(msm)
 
         # 线程启动
         self.time_thread()
@@ -146,7 +127,6 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.pushButton_help_us.clicked.connect(lambda: open_browser(soft_cfg.help_us))
         self.pushButton_web_rights.clicked.connect(self.licenses)
         self.pushButton_update.clicked.connect(self.update_thread)
-        self.pushButton_downloader_new.clicked.connect(self.open_download_win)
 
         # List Widget点击事件
         self.listWidget_source.itemClicked.connect(self.source_item_clicked)
@@ -174,7 +154,7 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.pushButton_menu_soft.setIcon(qtawesome.icon('fa.th-large', color='white'))
         self.pushButton_menu_downloader.setIcon(qtawesome.icon('fa.download', color='white'))
         # 下载器
-        self.pushButton_downloader_new.setIcon(qtawesome.icon('fa.plus', color='blue'))
+        # self.pushButton_downloader_new.setIcon(qtawesome.icon('fa.plus', color='blue'))
 
     # 自定义功能区
     def window_close(self, code):
@@ -279,137 +259,6 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
 
     def article_item_clicked(self, item):
         open_browser(self.article_url[self.listWidget_article.currentIndex().row()])
-
-    def open_download_win(self):
-        downloadWin = Download_UI()
-        downloadWin.mySignal.connect(self.download_thread)
-        downloadWin.exec_()
-
-    def download_thread(self, msm):
-        url = msm[0]
-        thread = msm[1]
-        fileName = msm[2]
-        self.progressBar_downloader_main.show()
-        self.textEdit_download_top.clear()
-        self.textEdit_download_sub.clear()
-        self.textEdit_download_sub.show()
-        try:
-            self.download_Thread.stop()
-            self.download_Thread.thread_signal.disconnect()
-        except:
-            pass
-        self.download_Thread = Download_Thread(url, thread, fileName)
-        self.download_Thread.thread_signal.connect(self.downloadThread)
-        self.download_Thread.start()
-        self.progressBar_downloader_main.setValue(0)
-        for i in self.pros:
-            i.setValue(0)
-        for i in range(thread):
-            self.pros[i].show()
-
-    def downloadThread(self, msm):
-        self.textEdit_download_top.clear()
-        self.textEdit_download_sub.clear()
-        isExists = msm.get('fileExists', 0)
-        if isExists == 1:
-            QMessageBox.information(self, '文件已经存在', f'检测到您要下载的文件已经存在，如果想要重新下载请删除 {msm["filePath"]} 后再进行下载')
-            self.textEdit_download_top.append(f'<center><h2>检测到您要下载的文件已经存在</h2><p>如果想要重新下载请删除 {msm["filePath"]} 后再进行下载</p></center>')
-            self.textEdit_download_sub.hide()
-            self.progressBar_downloader_main.hide()
-            for i in self.pros:
-                i.hide()
-        else:
-            isStarted = msm['info']['started']
-            isMutiThread = msm['info']['downloader']
-            isFinished = msm['info']['averageSpeed']
-            if isStarted == 0:
-                self.textEdit_download_top.append(f"下载程序正在初始化，这个过程不会很长\n请稍等...")
-            else:
-                if isMutiThread == 1 and isFinished == 0:
-                    ospeed = msm['main']['speed'] / 1024
-                    if ospeed == 0:
-                        ospeed = 1
-                    if ospeed > 1024:
-                        speed = f"{round(ospeed / 1024, 2)} M/s"
-                    else:
-                        speed = f"{ospeed} KB/s"
-                    underTime = (msm['info']['size'] - msm['main']['data']) / 1024 / ospeed
-                    if underTime > 60:
-                        underTime = f"{int(underTime / 60)} 分钟 {int(underTime % 60)} 秒"
-                    else:
-                        underTime = f"{int(underTime)} 秒"
-                    self.textEdit_download_top.append(
-                        f"文件来源：{msm['info']['url']}\n文件大小：{round(msm['info']['size'] / 1024 / 1024, 2)} MB\n已经下载：{round(msm['main']['data'] / 1024 / 1024, 2)} MB\n传输速度：{speed}\n剩余时间：{underTime}\n储存至：{msm['info']['saveTo']}\n")
-                    # 子进度条设置进度
-                    for i in range(msm['info']['thread']):
-                        self.pros[i].setValue(int(msm['sub']['data'][i][0] / msm['sub']['data'][i][1] * 100))
-                    # 主进度条设置进度
-                    self.progressBar_downloader_main.setValue(int(msm['main']['data'] / msm['info']['size'] * 100))
-                    # 子线程数据显示
-                    self.textEdit_download_sub.clear()
-                    for i in range(msm['info']['thread']):
-                        savedSubData = msm['sub']['data'][i][0] / 1024
-                        if savedSubData > 1024:
-                            savedSubData = f"{round(savedSubData / 1024, 2)} MB"
-                        else:
-                            savedSubData = f"{savedSubData} KB"
-                        if int(msm['sub']['data'][i][0] / 1024) >= int(msm['sub']['data'][i][1] / 1024):
-                            self.textEdit_download_sub.append(f"线程{i + 1}：已接收 {savedSubData}，接收完成.")
-                        else:
-                            self.textEdit_download_sub.append(f"线程{i + 1}：已接收 {savedSubData}，正在接收...")
-                    scrollbar = self.textEdit_download_sub.verticalScrollBar()
-                    scrollbar.setSliderPosition(0)
-                elif isMutiThread == 1 and isFinished != 0:
-                    # 下载完成，隐藏子进度条
-                    for i in range(msm['info']['thread']):
-                        self.pros[i].hide()
-                    # 子线程数据显示
-                    self.textEdit_download_sub.clear()
-                    for i in range(msm['info']['thread']):
-                        savedSubData = msm['sub']['data'][i][0] / 1024
-                        if savedSubData > 1024:
-                            savedSubData = f"{round(savedSubData / 1024, 2)} MB"
-                        else:
-                            savedSubData = f"{savedSubData} KB"
-                        self.textEdit_download_sub.append(f"线程{i + 1}：已接收 {savedSubData}，接收完成.")
-                    self.textEdit_download_sub.append(f"文件下载完成，已经保存到了 {msm['info']['saveTo']} ")
-                    scrollbar = self.textEdit_download_sub.verticalScrollBar()
-                    scrollbar.setSliderPosition(0)
-                    speed = isFinished / 1024
-                    if speed > 1024:
-                        speed = f"{round(speed / 1024, 2)} M/s"
-                    else:
-                        speed = f"{speed} KB/s"
-                    self.textEdit_download_top.append(
-                        f"文件来源：{msm['info']['url']}\n文件大小：{round(msm['info']['size'] / 1024 / 1024, 2)} MB\n已经下载：{round(msm['main']['data'] / 1024 / 1024, 2)} MB\n平均速度：{speed}\n已经储存至：{msm['info']['saveTo']}\n")
-                    self.progressBar_downloader_main.setValue(100)
-                elif isMutiThread == 0 and isFinished == 0:
-                    ospeed = msm['main']['speed'] / 1024
-                    if ospeed == 0:
-                        ospeed = 1
-                    if ospeed > 1024:
-                        speed = f"{round(ospeed / 1024, 2)} M/s"
-                    else:
-                        speed = f"{ospeed} KB/s"
-                    self.textEdit_download_top.append(
-                        f"文件来源：{msm['info']['url']}\n文件大小：未知\n已经下载：{round(msm['main']['data'] / 1024 / 1024, 2)} MB\n传输速度：{speed}\n剩余时间：未知\n储存至：{msm['info']['saveTo']}\n")
-                    # 子进度条设置进度
-                    for i in range(msm['info']['thread']):
-                        self.pros[i].hide()
-                    # 主进度条设置进度
-                    self.progressBar_downloader_main.setValue(100)
-                else:
-                    # 下载完成，隐藏子进度条
-                    for i in range(msm['info']['thread']):
-                        self.pros[i].hide()
-                    speed = isFinished / 1024
-                    if speed > 1024:
-                        speed = f"{round(speed / 1024, 2)} M/s"
-                    else:
-                        speed = f"{speed} KB/s"
-                    self.textEdit_download_top.append(
-                        f"文件来源：{msm['info']['url']}\n文件大小：{round(msm['main']['data'] / 1024 / 1024, 2)} MB\n已经下载：{round(msm['main']['data'] / 1024 / 1024, 2)} MB\n平均速度：{speed}\n已经储存至：{msm['info']['saveTo']}\n")
-
 
     def update_thread(self, auto=True):
         try:
