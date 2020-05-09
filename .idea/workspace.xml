@@ -35,7 +35,7 @@
       <recent name="F:\Python\System assistant" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.get_hash">
+  <component name="RunManager" selected="Python.test_link_tran">
     <configuration name="但行趣事管家" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="System assistant" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -78,27 +78,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="System assistant" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test1.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test_download" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="System assistant" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -112,6 +91,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_download.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_link_tran" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="System assistant" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_link_tran.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -143,11 +143,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test_link_tran" />
         <item itemvalue="Python.get_hash" />
         <item itemvalue="Python.但行趣事管家" />
         <item itemvalue="Python.test_print_logging" />
         <item itemvalue="Python.test_download" />
-        <item itemvalue="Python.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -169,58 +169,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="71" key="#Notifications/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1587868339943" />
-    <state x="488" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588473153785">
+    <state x="488" y="215" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1588832000783">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="488" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588473153785" />
+    <state x="488" y="215" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588832000783" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1588473947107">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588473947107" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1588770312655">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1588832310046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
-    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588770312655" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588832310046" />
     <state width="1530" height="790" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1588670377277" />
     <state width="1515" height="221" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588476235184" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1588770312654">
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1588832310046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
-    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588770312654" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588832310046" />
     <state width="1530" height="790" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1588670377277" />
     <state width="1515" height="221" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588476235184" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1588770312654">
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1588832310046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1587959047450" />
-    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588770312654" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588832310046" />
     <state width="1530" height="790" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1588670377277" />
     <state width="1515" height="221" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588476235184" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1588770312655">
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1588832310046">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
-    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588770312655" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588832310046" />
     <state width="1530" height="790" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1588670377277" />
     <state width="1515" height="221" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588476235184" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1588768410623">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1588770888019">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588768410623" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1588768410623">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588770888019" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1588770888018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588768410623" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1588768410623">
+    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588770888018" />
+    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1588770888018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588768410623" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1588768410623">
+    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588770888018" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1588770888018">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588768410623" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1588770888018" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1587966392725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
