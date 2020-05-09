@@ -111,6 +111,8 @@ class Downloader_Thread(QThread):
             pass
         else:
             os.mkdir('Download')
+        if not os.path.exists('aria2.session'):
+            open('aria2.session', 'w')
         subprocess.Popen("aria2c.exe --conf-path=aria2.conf")
 
     def stop(self):
