@@ -2,6 +2,8 @@ from PyQt5.QtCore import QThread, pyqtSignal
 import time
 import requests
 import json
+import os
+import subprocess
 import soft_cfg
 
 
@@ -96,3 +98,20 @@ class Update_Thread(QThread):
         else:
             result["auto"] = False
         self.display_signal.emit(result)
+
+
+class Downloader_Thread(QThread):
+    display_signal = pyqtSignal(bool)
+
+    def __init__(self):
+        super().__init__()
+
+    def run(self):
+        if os.path.exists('Download'):
+            pass
+        else:
+            os.mkdir('Download')
+        subprocess.Popen("aria2c.exe --conf-path=aria2.conf")
+
+    def stop(self):
+        subprocess.Popen("taskkill /F /IM aria2c.exe")

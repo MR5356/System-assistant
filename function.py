@@ -2,8 +2,9 @@ import hashlib
 import os
 import subprocess
 from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtCore import Qt, QSize
+from PyQt5.QtCore import Qt, QSize, QUrl
 from PyQt5.QtGui import QCursor
+from PyQt5.QtWebEngineWidgets import QWebEngineSettings
 from PyQt5.QtWidgets import qApp, QMessageBox, QWidget, QHBoxLayout, QVBoxLayout, QListWidgetItem
 import qtawesome
 from main_window import Ui_MainWindow
@@ -11,8 +12,9 @@ from Sub_Thread import Time_Thread
 from Sub_Thread import Source_Thread
 from Sub_Thread import Article_Thread
 from Sub_Thread import Update_Thread
-from download_function import Download_UI
+from Sub_Thread import Downloader_Thread
 import soft_cfg
+from test import WebEngineView
 
 md5obj = hashlib.md5()
 file = os.path.realpath(__file__)
@@ -116,7 +118,13 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.time_thread()
         self.source_thread()
         self.article_thread()
+        self.webDownloader_Thread = Downloader_Thread()
+        self.webDownloader_Thread.start()
         self.update_thread()
+
+        # 下载器Web UI
+        self.webviewDownloader = WebEngineView(self)
+        self.webDownloader("http://123.57.227.122/#")
 
     def signal_on_btn(self):
         # 基础按钮事件绑定
@@ -153,14 +161,13 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.pushButton_menu_source.setIcon(qtawesome.icon('fa.code', color='white'))
         self.pushButton_menu_soft.setIcon(qtawesome.icon('fa.th-large', color='white'))
         self.pushButton_menu_downloader.setIcon(qtawesome.icon('fa.download', color='white'))
-        # 下载器
-        # self.pushButton_downloader_new.setIcon(qtawesome.icon('fa.plus', color='blue'))
 
     # 自定义功能区
     def window_close(self, code):
         res = QMessageBox.question(self, '是否关闭程序', '请确保没有下载任务', QMessageBox.Yes | QMessageBox.No,
                                    QMessageBox.No)
         if res == QMessageBox.Yes:
+            self.webDownloader_Thread.stop()
             qApp.exit(code)
         else:
             pass
@@ -179,8 +186,23 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         scrollbar = self.textEdit_licenses.verticalScrollBar()
         scrollbar.setSliderPosition(0)
 
-        # 界面拖动
+    # 下载器界面，暂时使用webUI
+    def webDownloader(self, url):
+        self.webviewDownloader.load(QUrl(url))
+        self.webviewDownloader.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
+        self.webviewDownloader.settings().setAttribute(QWebEngineSettings.JavascriptEnabled, True)
+        self.webviewDownloader.settings().setAttribute(QWebEngineSettings.FullScreenSupportEnabled, True)
+        self.webviewDownloader.loadFinished.connect(self.js_exe)
+        layout = QHBoxLayout(self.widget_downloader)
+        layout.setContentsMargins(0, 0, 0, 0)
+        layout.addWidget(self.webviewDownloader)
+        self.widget_downloader.setLayout(layout)
 
+    def js_exe(self):
+        cmd = "document.body.style.backgroundColor=\"rgba(247,250,255,1)\""
+        self.webviewDownloader.page().runJavaScript(cmd)
+
+    # 界面拖动
     def mousePressEvent(self, event):
         if event.button() == Qt.LeftButton:
             self.m_flag = True

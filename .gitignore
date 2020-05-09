@@ -12,6 +12,7 @@ test*.py
 # Distribution / packaging
 .Python
 .idea/
+Download/
 build/
 develop-eggs/
 dist/
