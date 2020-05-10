@@ -113,6 +113,7 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.article_url = []  # 文章教程链接初始化
         self.label_10.hide()
         self.label_sys_info.hide()
+        self.label_welcome.setText(soft_cfg.welcome)
 
         # 线程启动
         self.time_thread()

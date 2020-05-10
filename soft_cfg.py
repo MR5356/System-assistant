@@ -1,7 +1,8 @@
 import json
 
-version = 1.2
-name = "但行趣事管家.exe"
+version = 1.3
+name = "toodoAssistant.exe"
+welcome = "赠卿春绿夏黄秋红，余生卿欠我白首"
 
 # 定义网址
 web_site = "https://www.toodo.fun"  # 网站主页

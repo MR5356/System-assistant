@@ -113,7 +113,15 @@ class Downloader_Thread(QThread):
             os.mkdir('Download')
         if not os.path.exists('aria2.session'):
             open('aria2.session', 'w')
-        subprocess.Popen("aria2c.exe --conf-path=aria2.conf")
+        # 隐藏命令提示行运行
+        startupinfo = subprocess.STARTUPINFO()
+        startupinfo.dwFlags = subprocess.CREATE_NEW_CONSOLE | subprocess.STARTF_USESHOWWINDOW
+        startupinfo.wShowWindow = subprocess.SW_HIDE
+        subprocess.Popen("aria2c.exe --conf-path=aria2.conf", startupinfo=startupinfo)
 
     def stop(self):
-        subprocess.Popen("taskkill /F /IM aria2c.exe")
+        # 隐藏命令提示行运行
+        startupinfo = subprocess.STARTUPINFO()
+        startupinfo.dwFlags = subprocess.CREATE_NEW_CONSOLE | subprocess.STARTF_USESHOWWINDOW
+        startupinfo.wShowWindow = subprocess.SW_HIDE
+        subprocess.Popen("taskkill /F /IM aria2c.exe", startupinfo=startupinfo)
