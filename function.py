@@ -99,7 +99,6 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.setWindowOpacity(1)  # 设置窗口透明度
         self.setAttribute(QtCore.Qt.WA_TranslucentBackground)  # 主窗口透明
         self.setWindowFlag(QtCore.Qt.FramelessWindowHint)  # 隐藏边框
-        # self.setWindowFlag(QtCore.Qt.WindowStaysOnTopHint)  # 窗口始终置顶
 
         # 初始化功能
         self.signal_on_btn()
@@ -138,7 +137,7 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         # 界面转换
         self.pushButton_menu_soft.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(0))
         # self.pushButton_menu_api.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(1))
-        self.pushButton_menu_api.clicked.connect(self.open_api_site)
+        self.pushButton_menu_api.clicked.connect(lambda: open_browser(soft_cfg.api_site))
         self.pushButton_menu_article.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
         self.pushButton_menu_source.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
         self.pushButton_menu_about_us.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(4))
@@ -165,14 +164,6 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         if res == QMessageBox.Yes:
             self.webDownloader_Thread.stop()
             qApp.exit(code)
-        else:
-            pass
-
-    def open_api_site(self):  # 接口文档 --跳转到API网页
-        res = QMessageBox.question(self, '提示', '即将在浏览器中打开接口文档，需登录后才可使用本站API，是否继续？', QMessageBox.Yes | QMessageBox.No,
-                                   QMessageBox.No)
-        if res == QMessageBox.Yes:
-            open_browser(soft_cfg.api_site)
         else:
             pass
 

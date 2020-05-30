@@ -113,6 +113,15 @@ class Downloader_Thread(QThread):
             os.mkdir('Download')
         if not os.path.exists('aria2.session'):
             open('aria2.session', 'w')
+        req = json.loads(requests.get(soft_cfg.tracks_url).text)
+        tracks = req['data']
+        with open("aria2.conf", "r", encoding='utf-8') as f:
+            conf = f.readlines()
+        del conf[-1]
+        conf.append(f"bt-tracker={tracks}")
+        with open("aria2.conf", "w", encoding='utf-8') as f:
+            for i in conf:
+                f.write(f"{i}")
         # 隐藏命令提示行运行
         startupinfo = subprocess.STARTUPINFO()
         startupinfo.dwFlags = subprocess.CREATE_NEW_CONSOLE | subprocess.STARTF_USESHOWWINDOW

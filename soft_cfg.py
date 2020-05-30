@@ -13,6 +13,7 @@ source_api_url = "http://softapi.toodo.fun/get_source"  # 源码仓库网址
 article_api_url = "http://softapi.toodo.fun/get_article"  # 文章教程网址
 update_url = "https://www.toodo.fun/api/software/version.php"  # 软件更新网址
 download_url = "http://aria2.toodo.fun/"  # 下载器webUI
+tracks_url = "http://softapi.toodo.fun/get_tracks"  # 自动更新下载器tracks网址
 
 # 线程配置
 time_thread = .5
