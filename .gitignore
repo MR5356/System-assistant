@@ -13,6 +13,7 @@ test*.py
 .Python
 .idea/
 Download/
+old/
 build/
 develop-eggs/
 dist/

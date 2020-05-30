@@ -2,9 +2,8 @@ import hashlib
 import os
 import subprocess
 from PyQt5 import QtWidgets, QtCore, QtGui
-from PyQt5.QtCore import Qt, QSize, QUrl
+from PyQt5.QtCore import Qt, QSize
 from PyQt5.QtGui import QCursor
-from PyQt5.QtWebEngineWidgets import QWebEngineSettings
 from PyQt5.QtWidgets import qApp, QMessageBox, QWidget, QHBoxLayout, QVBoxLayout, QListWidgetItem
 import qtawesome
 from main_window import Ui_MainWindow
@@ -14,7 +13,6 @@ from Sub_Thread import Article_Thread
 from Sub_Thread import Update_Thread
 from Sub_Thread import Downloader_Thread
 import soft_cfg
-from test import WebEngineView
 
 md5obj = hashlib.md5()
 file = os.path.realpath(__file__)
@@ -123,10 +121,6 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.webDownloader_Thread.start()
         self.update_thread()
 
-        # 下载器Web UI
-        self.webviewDownloader = WebEngineView(self)
-        self.webDownloader("http://123.57.227.122/#")
-
     def signal_on_btn(self):
         # 基础按钮事件绑定
         self.pushButton_close.clicked.connect(lambda: self.window_close(0))
@@ -148,7 +142,8 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.pushButton_menu_article.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(2))
         self.pushButton_menu_source.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(3))
         self.pushButton_menu_about_us.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(4))
-        self.pushButton_menu_downloader.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(7))
+        # self.pushButton_menu_downloader.clicked.connect(lambda: self.stackedWidget.setCurrentIndex(7))
+        self.pushButton_menu_downloader.clicked.connect(lambda: open_browser(soft_cfg.download_url))
 
     def icon_on_btn(self):
         self.pushButton_feedback.setIcon(qtawesome.icon('fa.envelope-o', color="blank"))
@@ -186,22 +181,6 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         self.textEdit_licenses.append(soft_cfg.licenses)
         scrollbar = self.textEdit_licenses.verticalScrollBar()
         scrollbar.setSliderPosition(0)
-
-    # 下载器界面，暂时使用webUI
-    def webDownloader(self, url):
-        self.webviewDownloader.load(QUrl(url))
-        self.webviewDownloader.settings().setAttribute(QWebEngineSettings.PluginsEnabled, True)
-        self.webviewDownloader.settings().setAttribute(QWebEngineSettings.JavascriptEnabled, True)
-        self.webviewDownloader.settings().setAttribute(QWebEngineSettings.FullScreenSupportEnabled, True)
-        self.webviewDownloader.loadFinished.connect(self.js_exe)
-        layout = QHBoxLayout(self.widget_downloader)
-        layout.setContentsMargins(0, 0, 0, 0)
-        layout.addWidget(self.webviewDownloader)
-        self.widget_downloader.setLayout(layout)
-
-    def js_exe(self):
-        cmd = "document.body.style.backgroundColor=\"rgba(247,250,255,1)\""
-        self.webviewDownloader.page().runJavaScript(cmd)
 
     # 界面拖动
     def mousePressEvent(self, event):

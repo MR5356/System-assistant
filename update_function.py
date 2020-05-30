@@ -98,14 +98,14 @@ class fun_main(Ui_MainWindow, QtWidgets.QMainWindow):
         if "jindu" in msm:
             num = int(msm.replace('jindu', ''))
             self.progressBar.setValue(num)
-        if "更新失败" in msm:
+        if "更新失败" in msm and "jindu" not in msm:
             self.com_flag = True
             self.show_message(msm)
-        elif msm == "更新完成" and self.com_flag == False:
+        elif msm == "更新完成" and self.com_flag == False and "jindu" not in msm:
             self.show_message("更新完成，更新程序即将退出")
             subprocess.Popen(f"{self.argv[2]}")
             qApp.exit(0)
-        elif not self.com_flag != False:
+        elif not self.com_flag != False and "jindu" not in msm:
             self.show_message(msm)
 
 

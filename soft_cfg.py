@@ -12,6 +12,7 @@ help_us = "https://toodo.fun/funs/thanks/"  # 捐赠网址
 source_api_url = "http://softapi.toodo.fun/get_source"  # 源码仓库网址
 article_api_url = "http://softapi.toodo.fun/get_article"  # 文章教程网址
 update_url = "https://www.toodo.fun/api/software/version.php"  # 软件更新网址
+download_url = "http://aria2.toodo.fun/"  # 下载器webUI
 
 # 线程配置
 time_thread = .5
