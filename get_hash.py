@@ -2,9 +2,9 @@ import hashlib
 import os
 import json
 
-
 path = "F:\\Python\\System assistant\\dist\\toodoAssistant"  # os.path.dirname(os.path.realpath(__file__))
 os.chdir(path)
+
 
 def get_file_md5(file_path):
     """

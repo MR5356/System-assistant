@@ -1,7 +1,7 @@
 <RCC>
-  <qresource prefix="/">
-    <file>images/wechat.jpg</file>
-    <file>images/toodo.fun.png</file>
-    <file>images/logo.ico</file>
-  </qresource>
+    <qresource prefix="/">
+        <file>images/wechat.jpg</file>
+        <file>images/toodo.fun.png</file>
+        <file>images/logo.ico</file>
+    </qresource>
 </RCC>

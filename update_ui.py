@@ -46,13 +46,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout.addItem(spacerItem)
         self.pushButton_min = QtWidgets.QPushButton(self.widget)
         self.pushButton_min.setMaximumSize(QtCore.QSize(30, 30))
-        self.pushButton_min.setStyleSheet("QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
+        self.pushButton_min.setStyleSheet(
+            "QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
         self.pushButton_min.setText("")
         self.pushButton_min.setObjectName("pushButton_min")
         self.horizontalLayout.addWidget(self.pushButton_min)
         self.pushButton_close = QtWidgets.QPushButton(self.widget)
         self.pushButton_close.setMaximumSize(QtCore.QSize(30, 30))
-        self.pushButton_close.setStyleSheet("QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
+        self.pushButton_close.setStyleSheet(
+            "QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
         self.pushButton_close.setText("")
         self.pushButton_close.setObjectName("pushButton_close")
         self.horizontalLayout.addWidget(self.pushButton_close)
@@ -93,7 +95,8 @@ class Ui_MainWindow(object):
         self.progressBar.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         self.progressBar.setAcceptDrops(False)
         self.progressBar.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.progressBar.setStyleSheet("QProgressBar::chunk{background:qlineargradient(spread:pad,x1:0,y1:0,x2:1,y2:0,stop:0 #36d1dc,stop:1 #5b86e5);}")
+        self.progressBar.setStyleSheet(
+            "QProgressBar::chunk{background:qlineargradient(spread:pad,x1:0,y1:0,x2:1,y2:0,stop:0 #36d1dc,stop:1 #5b86e5);}")
         self.progressBar.setProperty("value", 66)
         self.progressBar.setAlignment(QtCore.Qt.AlignCenter)
         self.progressBar.setTextVisible(True)

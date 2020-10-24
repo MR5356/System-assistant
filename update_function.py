@@ -170,7 +170,7 @@ class Compare_Thread(QThread):
                 except:
                     if j == 3:
                         self.thread_signal.emit(f"{i}更新失败")
-            self.thread_signal.emit(f'jindu{25+int((up_files.index(i)+1)/len(up_files)*75)}')
+            self.thread_signal.emit(f'jindu{25 + int((up_files.index(i) + 1) / len(up_files) * 75)}')
         self.thread_signal.emit(f"更新完成")
 
     def get_file_md5(self, file_path):

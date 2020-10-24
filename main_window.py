@@ -28,7 +28,8 @@ class Ui_MainWindow(object):
         self.widget_menu = QtWidgets.QWidget(self.widget)
         self.widget_menu.setMinimumSize(QtCore.QSize(200, 0))
         self.widget_menu.setMaximumSize(QtCore.QSize(200, 16777215))
-        self.widget_menu.setStyleSheet("QWidget#widget_menu{background:qlineargradient(spread:pad,x1:0,y1:0,x2:1,y2:0,stop:0 #4e54c8,stop:1 #8f94fb);}")
+        self.widget_menu.setStyleSheet(
+            "QWidget#widget_menu{background:qlineargradient(spread:pad,x1:0,y1:0,x2:1,y2:0,stop:0 #4e54c8,stop:1 #8f94fb);}")
         self.widget_menu.setObjectName("widget_menu")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.widget_menu)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 10)
@@ -69,7 +70,8 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.pushButton_menu_soft.setFont(font)
-        self.pushButton_menu_soft.setStyleSheet("QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
+        self.pushButton_menu_soft.setStyleSheet(
+            "QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
         self.pushButton_menu_soft.setObjectName("pushButton_menu_soft")
         self.verticalLayout.addWidget(self.pushButton_menu_soft)
         self.pushButton_menu_source = QtWidgets.QPushButton(self.widget_3)
@@ -80,7 +82,8 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.pushButton_menu_source.setFont(font)
-        self.pushButton_menu_source.setStyleSheet("QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
+        self.pushButton_menu_source.setStyleSheet(
+            "QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
         self.pushButton_menu_source.setObjectName("pushButton_menu_source")
         self.verticalLayout.addWidget(self.pushButton_menu_source)
         self.pushButton_menu_article = QtWidgets.QPushButton(self.widget_3)
@@ -91,7 +94,8 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.pushButton_menu_article.setFont(font)
-        self.pushButton_menu_article.setStyleSheet("QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
+        self.pushButton_menu_article.setStyleSheet(
+            "QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
         self.pushButton_menu_article.setObjectName("pushButton_menu_article")
         self.verticalLayout.addWidget(self.pushButton_menu_article)
         self.pushButton_menu_api = QtWidgets.QPushButton(self.widget_3)
@@ -102,7 +106,8 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.pushButton_menu_api.setFont(font)
-        self.pushButton_menu_api.setStyleSheet("QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
+        self.pushButton_menu_api.setStyleSheet(
+            "QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
         self.pushButton_menu_api.setObjectName("pushButton_menu_api")
         self.verticalLayout.addWidget(self.pushButton_menu_api)
         self.verticalLayout_2.addWidget(self.widget_3)
@@ -111,7 +116,8 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("微软雅黑")
         self.pushButton_menu_downloader.setFont(font)
-        self.pushButton_menu_downloader.setStyleSheet("QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
+        self.pushButton_menu_downloader.setStyleSheet(
+            "QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
         self.pushButton_menu_downloader.setObjectName("pushButton_menu_downloader")
         self.verticalLayout_2.addWidget(self.pushButton_menu_downloader)
         self.pushButton_menu_about_us = QtWidgets.QPushButton(self.widget_menu)
@@ -122,7 +128,8 @@ class Ui_MainWindow(object):
         font.setBold(False)
         font.setWeight(50)
         self.pushButton_menu_about_us.setFont(font)
-        self.pushButton_menu_about_us.setStyleSheet("QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
+        self.pushButton_menu_about_us.setStyleSheet(
+            "QPushButton{background:Transparent;color:white;}QPushButton:hover{background-color:rgba(0,0,0, 0.2);}")
         self.pushButton_menu_about_us.setObjectName("pushButton_menu_about_us")
         self.verticalLayout_2.addWidget(self.pushButton_menu_about_us)
         spacerItem = QtWidgets.QSpacerItem(20, 460, QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Expanding)
@@ -164,28 +171,32 @@ class Ui_MainWindow(object):
         self.pushButton_feedback = QtWidgets.QPushButton(self.widget_6)
         self.pushButton_feedback.setMinimumSize(QtCore.QSize(30, 30))
         self.pushButton_feedback.setMaximumSize(QtCore.QSize(30, 30))
-        self.pushButton_feedback.setStyleSheet("QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
+        self.pushButton_feedback.setStyleSheet(
+            "QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
         self.pushButton_feedback.setText("")
         self.pushButton_feedback.setObjectName("pushButton_feedback")
         self.horizontalLayout_4.addWidget(self.pushButton_feedback)
         self.pushButton_update = QtWidgets.QPushButton(self.widget_6)
         self.pushButton_update.setMinimumSize(QtCore.QSize(30, 30))
         self.pushButton_update.setMaximumSize(QtCore.QSize(30, 30))
-        self.pushButton_update.setStyleSheet("QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
+        self.pushButton_update.setStyleSheet(
+            "QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
         self.pushButton_update.setText("")
         self.pushButton_update.setObjectName("pushButton_update")
         self.horizontalLayout_4.addWidget(self.pushButton_update)
         self.pushButton_min = QtWidgets.QPushButton(self.widget_6)
         self.pushButton_min.setMinimumSize(QtCore.QSize(30, 30))
         self.pushButton_min.setMaximumSize(QtCore.QSize(30, 30))
-        self.pushButton_min.setStyleSheet("QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
+        self.pushButton_min.setStyleSheet(
+            "QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
         self.pushButton_min.setText("")
         self.pushButton_min.setObjectName("pushButton_min")
         self.horizontalLayout_4.addWidget(self.pushButton_min)
         self.pushButton_close = QtWidgets.QPushButton(self.widget_6)
         self.pushButton_close.setMinimumSize(QtCore.QSize(30, 30))
         self.pushButton_close.setMaximumSize(QtCore.QSize(30, 30))
-        self.pushButton_close.setStyleSheet("QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
+        self.pushButton_close.setStyleSheet(
+            "QPushButton{background:Transparent;color:blank;}QPushButton:hover{background-color:rgba(0,0,0, 0.1);}")
         self.pushButton_close.setText("")
         self.pushButton_close.setObjectName("pushButton_close")
         self.horizontalLayout_4.addWidget(self.pushButton_close)
@@ -271,7 +282,7 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.label_10.setFont(font)
-        self.label_10.setAlignment(QtCore.Qt.AlignRight|QtCore.Qt.AlignTrailing|QtCore.Qt.AlignVCenter)
+        self.label_10.setAlignment(QtCore.Qt.AlignRight | QtCore.Qt.AlignTrailing | QtCore.Qt.AlignVCenter)
         self.label_10.setObjectName("label_10")
         self.verticalLayout_9.addWidget(self.label_10)
         self.verticalLayout_10.addWidget(self.widget_9)
@@ -495,7 +506,7 @@ class Ui_MainWindow(object):
         self.label_4.setText(_translate("MainWindow", "每行代码都是用自己有限的青春换来的无限宝藏"))
         self.label_10.setText(_translate("MainWindow", "--致每一位程序员"))
         self.label_9.setText(_translate("MainWindow", "虽然不能保证每天更新一篇\n"
-"但是可以保证更新的每一篇都是干货"))
+                                                      "但是可以保证更新的每一篇都是干货"))
         self.label_7.setText(_translate("MainWindow", "更多精彩，敬请关注微电脑公众号"))
         self.label_8.setText(_translate("MainWindow", "http://www.toodo.fun"))
         self.pushButton_web_site.setText(_translate("MainWindow", "但行趣事"))
@@ -504,4 +515,6 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Copyright © 2020 Toodo.fun. All Rights Reserved."))
         self.label_welcome.setText(_translate("MainWindow", "我自是年少，韶华倾负"))
         self.label_time.setText(_translate("MainWindow", "TextLabel"))
+
+
 import resources_rc

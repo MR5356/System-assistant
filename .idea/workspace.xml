@@ -21,11 +21,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../test" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -48,6 +48,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/get_hash.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -69,6 +70,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_download.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -90,6 +92,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_link_tran.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -111,6 +114,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_print_logging.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -132,6 +136,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="F:\Python\System assistant\toodoAssistant.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -161,6 +166,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1587734107941</updated>
+      <workItem from="1591013348818" duration="51000" />
     </task>
     <servers />
   </component>
@@ -181,58 +187,58 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589209470296" />
-    <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1590827136529">
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom" timestamp="1590830773560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
     <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589093214064" />
     <state width="1530" height="790" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1588670377277" />
-    <state width="1515" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827136529" />
+    <state width="1515" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590830773560" />
     <state width="1515" height="221" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588476235184" />
-    <state width="1515" height="261" key="GridCell.Tab.0.center" timestamp="1590827136529">
+    <state width="1515" height="210" key="GridCell.Tab.0.center" timestamp="1590830773560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
     <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589093214064" />
     <state width="1530" height="790" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1588670377277" />
-    <state width="1515" height="261" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827136529" />
+    <state width="1515" height="210" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590830773560" />
     <state width="1515" height="221" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588476235184" />
-    <state width="1515" height="261" key="GridCell.Tab.0.left" timestamp="1590827136528">
+    <state width="1515" height="210" key="GridCell.Tab.0.left" timestamp="1590830773560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1587959047450" />
     <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589093214064" />
     <state width="1530" height="790" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1588670377277" />
-    <state width="1515" height="261" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827136528" />
+    <state width="1515" height="210" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590830773560" />
     <state width="1515" height="221" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588476235184" />
-    <state width="1515" height="261" key="GridCell.Tab.0.right" timestamp="1590827136529">
+    <state width="1515" height="210" key="GridCell.Tab.0.right" timestamp="1590830773560">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1419" height="221" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1587959047451" />
     <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589093214064" />
     <state width="1530" height="790" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1440.860@1920.0.1440.860" timestamp="1588670377277" />
-    <state width="1515" height="261" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827136529" />
+    <state width="1515" height="210" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590830773560" />
     <state width="1515" height="221" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588476235184" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1590827140821">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1590827758904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589039797562" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827140821" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1590827140821">
+    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827758904" />
+    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1590827758904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589039797562" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827140821" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1590827140820">
+    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827758904" />
+    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1590827758904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589039797562" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827140820" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1590827140821">
+    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827758904" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1590827758904">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1440.860@0.0.1536.824" timestamp="1589039797562" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827140821" />
+    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1590827758904" />
     <state x="270" y="54" key="SettingsEditor" timestamp="1587966392725">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
